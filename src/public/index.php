@@ -5,19 +5,13 @@
 
 require '../Core/Router.php';
 
-
-//
-
-
-
-
 $router = new Router();
 
 //
 //$router->add('', ['controller' => 'home', 'action' =>'index']);
 //$router->add('/posts', ['controller' => 'posts', 'action' => 'index']);
-//$router->add('/posts/new', ['controller'=>'posts', 'action'=>'new']);
-//$router->add('/home', ['controller' => 'home', 'action'=>'index']);
+$router->add('/posts/new', ['controller'=>'posts', 'action'=>'new']);
+$router->add('/home', ['controller' => 'home', 'action'=>'index']);
 
 $router->add('controller', 'action');
 $router->add('admin/{action}/{controller}');
@@ -35,6 +29,9 @@ $router->add('admin/{action}/{controller}');
 //}else{
 //    echo 'No route found to URL: '. $url;
 //}
+
+
+//xdebug_info();
 
 echo "<pre>";
 echo htmlspecialchars(print_r($router->getRoutes(), true));
